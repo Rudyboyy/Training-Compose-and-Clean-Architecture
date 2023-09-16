@@ -13,12 +13,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
 import com.example.trainingcomposeandcleanarchitecture.presentation.onboarding.OnBoardingScreen
 import com.example.trainingcomposeandcleanarchitecture.ui.theme.TrainingComposeandCleanArchitectureTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)//todo
         installSplashScreen()
         setContent {
             TrainingComposeandCleanArchitectureTheme {
