@@ -15,9 +15,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.lifecycleScope
 import com.example.trainingcomposeandcleanarchitecture.domain.usecases.AppEntryUseCases
 import com.example.trainingcomposeandcleanarchitecture.presentation.onboarding.OnBoardingScreen
+import com.example.trainingcomposeandcleanarchitecture.presentation.onboarding.OnBoardingViewModel
 import com.example.trainingcomposeandcleanarchitecture.ui.theme.TrainingComposeandCleanArchitectureTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -39,7 +41,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             TrainingComposeandCleanArchitectureTheme {
                 Box(modifier = Modifier.background(color = MaterialTheme.colorScheme.background)) {
-                    OnBoardingScreen()
+                    val viewModel: OnBoardingViewModel = hiltViewModel()
+                    OnBoardingScreen(
+                        event = viewModel::onEvent
+                    )
                 }
             }
         }
