@@ -22,13 +22,16 @@ import androidx.compose.ui.unit.dp
 import com.example.trainingcomposeandcleanarchitecture.presentation.Dimens.MediumPadding2
 import com.example.trainingcomposeandcleanarchitecture.presentation.common.NewsButton
 import com.example.trainingcomposeandcleanarchitecture.presentation.common.NewsTextButton
+import com.example.trainingcomposeandcleanarchitecture.presentation.onboarding.components.OnBoardingEvent
 import com.example.trainingcomposeandcleanarchitecture.presentation.onboarding.components.OnBoardingPage
 import com.example.trainingcomposeandcleanarchitecture.presentation.onboarding.components.PagerIndicator
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(
+    event: (OnBoardingEvent) -> Unit
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         val pagerState = rememberPagerState(initialPage = 0) {
             pages.size
@@ -86,7 +89,7 @@ fun OnBoardingScreen() {
                     onClick = {
                         scope.launch {
                             if (pagerState.currentPage == 2) {
-//                                onEvent(OnBoardingEvent.SaveAppEntry)
+                                event(OnBoardingEvent.SaveAppEntry)
                             } else {
                                 pagerState.animateScrollToPage(
                                     page = pagerState.currentPage + 1
