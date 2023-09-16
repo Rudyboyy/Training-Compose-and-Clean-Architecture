@@ -3,22 +3,28 @@ package com.example.trainingcomposeandcleanarchitecture.data.manger
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
 import com.example.trainingcomposeandcleanarchitecture.domain.manger.LocalUserManger
 import com.example.trainingcomposeandcleanarchitecture.util.Constants
 import com.example.trainingcomposeandcleanarchitecture.util.Constants.USER_SETTINGS
 import kotlinx.coroutines.flow.Flow
-import java.util.prefs.Preferences
+import kotlinx.coroutines.flow.map
 
 class LocalUserMangerImpl(
     private val context: Context
 ): LocalUserManger {
-    override suspend fun saveEntry() {
-        TODO("Not yet implemented")
+
+    override suspend fun saveAppEntry() {
+        context.dataStore.edit { settings ->
+            settings[PreferenceKeys.APP_ENTRY] = true
+        }
     }
 
     override fun readAppEntry(): Flow<Boolean> {
-        TODO("Not yet implemented")
+        return context.dataStore.data.map { preferences ->
+            preferences[PreferenceKeys.APP_ENTRY] ?: false
+        }
     }
 }
 
