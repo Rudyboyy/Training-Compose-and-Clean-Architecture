@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import com.example.trainingcomposeandcleanarchitecture.presentation.navgraph.NavGraph
-import com.example.trainingcomposeandcleanarchitecture.ui.theme.TrainingComposeandCleanArchitectureTheme
+import com.example.trainingcomposeandcleanarchitecture.ui.theme.TrainingComposeAndCleanArchitectureTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
         }
 
         setContent {
-            TrainingComposeandCleanArchitectureTheme {
+            TrainingComposeAndCleanArchitectureTheme {
                 val isSystemInDarkMode = isSystemInDarkTheme()
                 val systemController = rememberSystemUiController()
 

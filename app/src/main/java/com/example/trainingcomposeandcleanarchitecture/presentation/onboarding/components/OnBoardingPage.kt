@@ -22,7 +22,7 @@ import com.example.trainingcomposeandcleanarchitecture.presentation.Dimens.Mediu
 import com.example.trainingcomposeandcleanarchitecture.presentation.Dimens.MediumPadding2
 import com.example.trainingcomposeandcleanarchitecture.presentation.onboarding.Page
 import com.example.trainingcomposeandcleanarchitecture.presentation.onboarding.pages
-import com.example.trainingcomposeandcleanarchitecture.ui.theme.TrainingComposeandCleanArchitectureTheme
+import com.example.trainingcomposeandcleanarchitecture.ui.theme.TrainingComposeAndCleanArchitectureTheme
 
 @Composable
 fun OnBoardingPage(
@@ -56,7 +56,7 @@ fun OnBoardingPage(
 @Preview(uiMode = UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 fun OnBoardingPagePreview() {
-    TrainingComposeandCleanArchitectureTheme {
+    TrainingComposeAndCleanArchitectureTheme {
         OnBoardingPage(
             page = pages[0])
     }
