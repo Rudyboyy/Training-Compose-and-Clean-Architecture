@@ -71,7 +71,7 @@ fun ArticleCard(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
                     text = article.source.name,
-                    style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
+                    style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
                     color = colorResource(
                         id = R.color.text_title
                     ),
@@ -87,7 +87,7 @@ fun ArticleCard(
                 )
                 Spacer(modifier = Modifier.width(ExtraSmallPadding2))
                 Text(text = article.publishedAt,
-                    style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
+                    style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
                     color = colorResource(id = R.color.body)
                 )
             }
