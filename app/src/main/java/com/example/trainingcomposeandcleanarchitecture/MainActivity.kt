@@ -14,10 +14,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
+import androidx.lifecycle.lifecycleScope
+import com.example.trainingcomposeandcleanarchitecture.data.local.NewsDao
+import com.example.trainingcomposeandcleanarchitecture.domain.model.Article
+import com.example.trainingcomposeandcleanarchitecture.domain.model.Source
 import com.example.trainingcomposeandcleanarchitecture.presentation.navgraph.NavGraph
 import com.example.trainingcomposeandcleanarchitecture.ui.theme.TrainingComposeAndCleanArchitectureTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -27,6 +33,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
+
         installSplashScreen().apply {
             setKeepOnScreenCondition(condition = { viewModel.splashCondition.value })
 
