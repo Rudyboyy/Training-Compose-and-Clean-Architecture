@@ -3,7 +3,7 @@ package com.example.trainingcomposeandcleanarchitecture.di
 import android.app.Application
 import com.example.trainingcomposeandcleanarchitecture.data.manager.LocalUserManagerImpl
 import com.example.trainingcomposeandcleanarchitecture.data.remote.NewsApi
-import com.example.trainingcomposeandcleanarchitecture.data.remote.repository.NewsRepositoryImpl
+import com.example.trainingcomposeandcleanarchitecture.data.repository.NewsRepositoryImpl
 import com.example.trainingcomposeandcleanarchitecture.domain.manger.LocalUserManager
 import com.example.trainingcomposeandcleanarchitecture.domain.repository.NewsRepository
 import com.example.trainingcomposeandcleanarchitecture.domain.usecases.app_entry.AppEntryUseCases
@@ -11,6 +11,7 @@ import com.example.trainingcomposeandcleanarchitecture.domain.usecases.app_entry
 import com.example.trainingcomposeandcleanarchitecture.domain.usecases.app_entry.SaveAppEntry
 import com.example.trainingcomposeandcleanarchitecture.domain.usecases.news.GetNews
 import com.example.trainingcomposeandcleanarchitecture.domain.usecases.news.NewsUseCases
+import com.example.trainingcomposeandcleanarchitecture.domain.usecases.news.SearchNews
 import com.example.trainingcomposeandcleanarchitecture.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -65,6 +66,7 @@ object AppModule {
     ): NewsUseCases {
         return NewsUseCases(
             getNews = GetNews(newsRepository),
+            searchNews = SearchNews(newsRepository)
         )
     }
 }
