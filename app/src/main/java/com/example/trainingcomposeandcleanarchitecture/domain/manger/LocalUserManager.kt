@@ -2,7 +2,7 @@ package com.example.trainingcomposeandcleanarchitecture.domain.manger
 
 import kotlinx.coroutines.flow.Flow
 
-interface LocalUserManger {
+interface LocalUserManager {
 
     suspend fun saveAppEntry()
 

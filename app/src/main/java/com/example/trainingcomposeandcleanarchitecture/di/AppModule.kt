@@ -1,10 +1,10 @@
 package com.example.trainingcomposeandcleanarchitecture.di
 
 import android.app.Application
-import com.example.trainingcomposeandcleanarchitecture.data.manger.LocalUserMangerImpl
+import com.example.trainingcomposeandcleanarchitecture.data.manager.LocalUserManagerImpl
 import com.example.trainingcomposeandcleanarchitecture.data.remote.NewsApi
 import com.example.trainingcomposeandcleanarchitecture.data.remote.repository.NewsRepositoryImpl
-import com.example.trainingcomposeandcleanarchitecture.domain.manger.LocalUserManger
+import com.example.trainingcomposeandcleanarchitecture.domain.manger.LocalUserManager
 import com.example.trainingcomposeandcleanarchitecture.domain.repository.NewsRepository
 import com.example.trainingcomposeandcleanarchitecture.domain.usecases.app_entry.AppEntryUseCases
 import com.example.trainingcomposeandcleanarchitecture.domain.usecases.app_entry.ReadAppEntry
@@ -28,15 +28,15 @@ object AppModule {
     @Singleton
     fun provideLocalUserManger(
         application: Application
-    ): LocalUserManger = LocalUserMangerImpl(application)
+    ): LocalUserManager = LocalUserManagerImpl(application)
 
     @Provides
     @Singleton
     fun provideAppEntryUseCases(
-        localUserManger: LocalUserManger
+        localUserManager: LocalUserManager
     ) = AppEntryUseCases(
-        readAppEntry = ReadAppEntry(localUserManger),
-        saveAppEntry = SaveAppEntry(localUserManger)
+        readAppEntry = ReadAppEntry(localUserManager),
+        saveAppEntry = SaveAppEntry(localUserManager)
     )
     @Provides
     @Singleton
