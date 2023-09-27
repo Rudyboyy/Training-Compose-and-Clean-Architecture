@@ -1,11 +1,11 @@
 package com.example.trainingcomposeandcleanarchitecture.domain.usecases.app_entry
 
-import com.example.trainingcomposeandcleanarchitecture.domain.manger.LocalUserManger
+import com.example.trainingcomposeandcleanarchitecture.domain.manger.LocalUserManager
 
 class SaveAppEntry(
-    private val localUserManger: LocalUserManger
+    private val localUserManager: LocalUserManager
 ) {
     suspend operator fun invoke(){
-        localUserManger.saveAppEntry()
+        localUserManager.saveAppEntry()
     }
 }

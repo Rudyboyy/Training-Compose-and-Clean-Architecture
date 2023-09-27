@@ -1,19 +1,19 @@
-package com.example.trainingcomposeandcleanarchitecture.data.manger
+package com.example.trainingcomposeandcleanarchitecture.data.manager
 
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
-import com.example.trainingcomposeandcleanarchitecture.domain.manger.LocalUserManger
+import com.example.trainingcomposeandcleanarchitecture.domain.manger.LocalUserManager
 import com.example.trainingcomposeandcleanarchitecture.util.Constants
 import com.example.trainingcomposeandcleanarchitecture.util.Constants.USER_SETTINGS
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class LocalUserMangerImpl(
+class LocalUserManagerImpl(
     private val context: Context
-): LocalUserManger {
+): LocalUserManager {
 
     override suspend fun saveAppEntry() {
         context.dataStore.edit { settings ->
