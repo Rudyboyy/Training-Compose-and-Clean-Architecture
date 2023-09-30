@@ -10,6 +10,8 @@ import androidx.navigation.navigation
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.trainingcomposeandcleanarchitecture.presentation.Search.SearchScreen
 import com.example.trainingcomposeandcleanarchitecture.presentation.Search.SearchViewModel
+import com.example.trainingcomposeandcleanarchitecture.presentation.bookmark.BookmarkScreen
+import com.example.trainingcomposeandcleanarchitecture.presentation.bookmark.BookmarkViewModel
 import com.example.trainingcomposeandcleanarchitecture.presentation.home.HomeScreen
 import com.example.trainingcomposeandcleanarchitecture.presentation.home.HomeViewModel
 import com.example.trainingcomposeandcleanarchitecture.presentation.onboarding.OnBoardingScreen
@@ -42,8 +44,10 @@ fun NavGraph(
 //                val viewModel: HomeViewModel = hiltViewModel()
 //                val articles = viewModel.news.collectAsLazyPagingItems()
 //                HomeScreen(articles = articles, navigate = { /*TODO*/ })
-                val viewModel: SearchViewModel = hiltViewModel()
-                SearchScreen(state = viewModel.state.value, event = viewModel::onEvent, navigate = {})
+//                val viewModel: SearchViewModel = hiltViewModel()
+//                SearchScreen(state = viewModel.state.value, event = viewModel::onEvent, navigate = {})
+                val viewModel: BookmarkViewModel = hiltViewModel()
+                BookmarkScreen(state = viewModel.state.value, navigate = {})
             }
         }
     }
