@@ -102,7 +102,7 @@ fun ArticleCardPreview() {
     TrainingComposeAndCleanArchitectureTheme {
         ArticleCard(
             article = Article(
-                author = "",
+                author = "ffff",
                 content = "",
                 description = "",
                 publishedAt = "2 Hours",
