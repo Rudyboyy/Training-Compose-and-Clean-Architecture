@@ -1,6 +1,5 @@
 package com.example.trainingcomposeandcleanarchitecture.presentation.home
 
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn

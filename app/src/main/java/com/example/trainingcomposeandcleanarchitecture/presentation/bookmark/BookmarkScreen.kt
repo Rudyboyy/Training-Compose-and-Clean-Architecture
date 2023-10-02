@@ -21,7 +21,7 @@ import com.example.trainingcomposeandcleanarchitecture.presentation.navgraph.Rou
 @Composable
 fun BookmarkScreen(
     state: BookmarkState,
-    navigate: (String) -> Unit
+    navigateToDetails: (Article) -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -42,7 +42,7 @@ fun BookmarkScreen(
 
         ArticlesList(
             articles = state.articles,
-            onClick = { navigate(Route.DetailsScreen.route) }
+            onClick = { navigateToDetails(it) }
         )
     }
 }

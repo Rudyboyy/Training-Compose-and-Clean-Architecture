@@ -1,19 +1,14 @@
 package com.example.trainingcomposeandcleanarchitecture.presentation.navgraph
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
-import androidx.paging.compose.collectAsLazyPagingItems
-import com.example.trainingcomposeandcleanarchitecture.presentation.Search.SearchScreen
-import com.example.trainingcomposeandcleanarchitecture.presentation.Search.SearchViewModel
 import com.example.trainingcomposeandcleanarchitecture.presentation.bookmark.BookmarkScreen
 import com.example.trainingcomposeandcleanarchitecture.presentation.bookmark.BookmarkViewModel
-import com.example.trainingcomposeandcleanarchitecture.presentation.home.HomeScreen
-import com.example.trainingcomposeandcleanarchitecture.presentation.home.HomeViewModel
+import com.example.trainingcomposeandcleanarchitecture.presentation.news_navigator.NewsNavigator
 import com.example.trainingcomposeandcleanarchitecture.presentation.onboarding.OnBoardingScreen
 import com.example.trainingcomposeandcleanarchitecture.presentation.onboarding.OnBoardingViewModel
 
@@ -46,8 +41,9 @@ fun NavGraph(
 //                HomeScreen(articles = articles, navigate = { /*TODO*/ })
 //                val viewModel: SearchViewModel = hiltViewModel()
 //                SearchScreen(state = viewModel.state.value, event = viewModel::onEvent, navigate = {})
-                val viewModel: BookmarkViewModel = hiltViewModel()
-                BookmarkScreen(state = viewModel.state.value, navigate = {})
+//                val viewModel: BookmarkViewModel = hiltViewModel()
+//                BookmarkScreen(state = viewModel.state.value, navigateToDetails = {})
+                NewsNavigator()
             }
         }
     }

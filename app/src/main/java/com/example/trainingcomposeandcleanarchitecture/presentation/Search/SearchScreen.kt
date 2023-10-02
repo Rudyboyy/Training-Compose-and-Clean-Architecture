@@ -19,7 +19,7 @@ import com.example.trainingcomposeandcleanarchitecture.presentation.common.Searc
 fun SearchScreen(
     state: SearchState,
     event:(SearchEvent) -> Unit,
-    navigate:(Article) -> Unit
+    navigateToDetails:(Article) -> Unit
 ) {
 
     Column(
@@ -37,11 +37,11 @@ fun SearchScreen(
             }
         )
         Spacer(modifier = Modifier.height(MediumPadding1))
-        state.articles?.let {
+        state.articles?.let { it ->
             val articles = it.collectAsLazyPagingItems()
             ArticlesList(
                 articles = articles,
-                onClick = navigate
+                onClick = { navigateToDetails(it) }
             )
         }
     }
